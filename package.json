@@ -1,0 +1,65 @@
+{
+	"name": "tinij",
+	"displayName": "tinij",
+	"description": "Tinij - track your work activity",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"license": "BSD-3-Clause",
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "tinij.apikey",
+				"title": "Tinij: Set Api Key"
+			},
+			{
+				"command": "tinij.status_bar_enabled",
+				"title": "Tinij: Status Bar Enabled"
+			},
+			{
+				"command": "tinij.dashboard",
+				"title": "Tinij: Open dashboard"
+			},
+			{
+				"command": "tinij.config_file",
+				"title": "Tinij: Open config file"
+			},
+			{
+				"command": "tinij.log_file",
+				"title": "Tinij: Open log file"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"dependencies": {
+		"tinij-base": "^0.1.2"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.1",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.43.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.18.0",
+		"@typescript-eslint/eslint-plugin": "^2.18.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.0.1",
+		"typescript": "^3.7.5",
+		"vscode-test": "^1.3.0"
+	}
+}
