@@ -14,9 +14,10 @@ let tinijService: ITinijService | undefined;
 let helperService: IHelperExtensions | undefined;
 
 
-export function activate(context: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
 
 	tinijService = new TinijService();
+	await tinijService.initService();
 	helperService = new HelperExtensions();
 	tinijIDEExtension = new ExtensionIDEService(tinijService, helperService);
 

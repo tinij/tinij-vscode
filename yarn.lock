@@ -239,6 +239,11 @@ astral-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-1.0.0.tgz#6c8c3fb827dd43ee3918f27b82782ab7658a6fd9"
   integrity sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==
 
+async-lock@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/async-lock/-/async-lock-1.2.2.tgz#480bd51e4b7ffd4debbd4973763718ec9acb9a9e"
+  integrity sha512-uczz62z2fMWOFbyo6rG4NlV2SdxugJT6sZA2QcfB1XaSjEiOh8CuOb/TttyMnYQCda6nkWecJe465tGQDPJiKw==
+
 atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
@@ -2130,11 +2135,12 @@ through@^2.3.6:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
-tinij-base@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/tinij-base/-/tinij-base-0.1.2.tgz#5947b396fdbf18a6fa51a66710e54227cb35e58c"
-  integrity sha512-t8EBmvqvNpsYkQz4phb/auypI0EsvUopEF8S+p3SVd+hmER+fxQYhDkVrBlUExA94NcSzIKUNGtE8zxVpZCiKQ==
+tinij-base@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/tinij-base/-/tinij-base-0.1.5.tgz#71e46fe1418644656664c702fec545c82fdb2660"
+  integrity sha512-Xvbqu4B21iX/ZC0W3zuzmsnHRPibRLilOMQ+YAXOBDfubMt4INYnVRqJ+BKISftxScezsmdJZm6ZFeGQZVVkmw==
   dependencies:
+    async-lock "1.2.2"
     axios "^0.19.2"
     class-validator "^0.12.0-rc.0"
     git-branch "^2.0.1"
