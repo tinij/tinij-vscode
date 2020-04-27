@@ -1,11 +1,36 @@
 {
-	"name": "tinij.vscode",
+	"name": "tinij-vscode",
 	"displayName": "TiniJ extension for VS Code",
 	"description": "TiniJ - track your time and work activity",
 	"version": "0.0.1",
+	"homepage": "https://tinij.com/",
+	"bugs": {
+        "url": "https://github.com/tinij/tinij-vscode/issues",
+        "email": "alex@tinij.com"
+    },
+	"publisher": "TiniJ",
+	"author": {
+        "name": "TiniJ"
+    },
 	"engines": {
 		"vscode": "^1.43.0"
 	},
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/tinij/tinij-vscode.git"
+    },
+	"extensionKind": [
+        "workspace"
+	],
+	"keywords": [
+		"time tracking",
+		"time track",
+		"productivity",
+		"metrics",
+        "project",
+        "git",
+        "timer"
+    ],
 	"categories": [
 		"Other"
 	],
@@ -43,7 +68,7 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"dependencies": {
-		"tinij-base": "^0.1.13"
+		"tinij-base": "^0.1.16"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",

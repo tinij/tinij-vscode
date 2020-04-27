@@ -70,9 +70,7 @@ export class ExtensionIDEService implements IExtentionIDEService {
 
     public async initialize() : Promise<void> {
         this.setupEventListeners();
-
         this.hasApiToken = await this.tinijService.apiTokenExist();
-
         this.checkAndPromtApiKey();
     }
 
@@ -95,7 +93,7 @@ export class ExtensionIDEService implements IExtentionIDEService {
     }
 
     private checkAndPromtApiKey() : void {
-        if (!this.hasApiToken) {
+        if (this.hasApiToken === false) {
             this.promptApiKey();
         }
     }

@@ -10,7 +10,7 @@ export class TinijService implements ITinijService {
     private lastTrackedActivity: number = 0;
 
     constructor() {
-        this.tinijExecutor = new Tinij("");
+        this.tinijExecutor = new Tinij();
     }
 
     getActivityFile(): string {
@@ -28,9 +28,8 @@ export class TinijService implements ITinijService {
         return this.tinijExecutor.isApiKeyExist();
     }
     
-    async setApiToken(token: string): Promise<boolean> {
-        this.tinijExecutor.setApiKey(token);
-        return true;
+    setApiToken(token: string): Promise<boolean> {
+        return this.tinijExecutor.setApiKey(token);
     }
 
     async initService(): Promise<boolean> {
