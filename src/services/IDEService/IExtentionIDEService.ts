@@ -1,5 +1,5 @@
 export interface IExtentionIDEService {
-    initialize() : void;
+    initialize() : Promise<void>;
     promptApiKey(): void;
     promptDebug(): void;
     promptStatusBar(): void;

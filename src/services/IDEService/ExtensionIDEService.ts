@@ -8,19 +8,33 @@ export class ExtensionIDEService implements IExtentionIDEService {
     public tinijService: ITinijService;
     public helperService: IHelperExtensions;
 
+    private hasApiToken: boolean;
     private disposable: vscode.Disposable | undefined;
 
     constructor(tinijService: ITinijService, helperService: IHelperExtensions)
     {
         this.tinijService = tinijService;
         this.helperService = helperService;
+        this.hasApiToken = false;
     }
 
     dispose(): void {
     }
 
-
     promptApiKey(): void {
+        let promptOptions = {
+            prompt: 'Tinij Api Key',
+            placeHolder: 'Enter your api key from https://app.tinij.com/account',
+            value: "xxxx-xxxx-xxxx-xxxx-xxxx",
+            ignoreFocusOut: true,
+          };
+        vscode.window.showInputBox(promptOptions).then(val => {
+            if (val !== null && val !== undefined) {
+                this.tinijService.setApiToken(val);
+            } else {
+                vscode.window.setStatusBarMessage('WakaTime api key not provided');
+            }
+        });
     }
 
     promptDebug(): void {
@@ -33,14 +47,25 @@ export class ExtensionIDEService implements IExtentionIDEService {
     }
 
     openWebsite(): void {
+        let url = 'https://app.tinij.com/';
+        vscode.env.openExternal(vscode.Uri.parse(url));
     }
 
     openLogFile(): void {
+        let path = this.tinijService.getActivityFile();
+        if (path) {
+          let uri = vscode.Uri.file(path);
+          vscode.window.showTextDocument(uri);
+        }
     }
 
 
-    public initialize() : void {
+    public async initialize() : Promise<void> {
         this.setupEventListeners();
+
+        this.hasApiToken = await this.tinijService.apiTokenExist();
+
+        this.checkAndPromtApiKey();
     }
 
     private setupEventListeners(): void {
@@ -59,6 +84,12 @@ export class ExtensionIDEService implements IExtentionIDEService {
 
     private onSave(): void {
         this.onEvent(true);
+    }
+
+    private checkAndPromtApiKey() : void {
+        if (!this.hasApiToken) {
+            this.promptApiKey();
+        }
     }
 
     private onEvent(isWrite: boolean): void {

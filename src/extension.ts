@@ -38,7 +38,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(tinijService);
 	context.subscriptions.push(tinijIDEExtension);
 
-	tinijIDEExtension.initialize();
+	await tinijIDEExtension.initialize();
 
 }
 

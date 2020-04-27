@@ -2135,10 +2135,10 @@ through@^2.3.6:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
-tinij-base@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/tinij-base/-/tinij-base-0.1.5.tgz#71e46fe1418644656664c702fec545c82fdb2660"
-  integrity sha512-Xvbqu4B21iX/ZC0W3zuzmsnHRPibRLilOMQ+YAXOBDfubMt4INYnVRqJ+BKISftxScezsmdJZm6ZFeGQZVVkmw==
+tinij-base@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/tinij-base/-/tinij-base-0.1.13.tgz#3ddfcd6cacfd230bc8700923c251ebe95a5d6f35"
+  integrity sha512-2F0wy8fKyJzyiC2LQ3V6FJ6/wNVQ0u6qAPKHpCKC+N/XZ+SbqKJXBMATYS5Iir7hPOu+XIXuOIspnsjR8w9TfQ==
   dependencies:
     async-lock "1.2.2"
     axios "^0.19.2"

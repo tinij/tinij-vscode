@@ -1,9 +1,7 @@
 import * as vscode from 'vscode';
 import {ITinijService} from "./ITinijService";
-import { Tinij } from 'tinij-base';
+import { Tinij, CategoryEnum, PluginTypeEnum } from "tinij-base";
 import { PLUGIN_NAME } from '../../constants';
-import { CategoryEnum } from 'tinij-base/dist/enums/CategoryEnum';
-import { PluginTypeEnum } from 'tinij-base/dist/enums/PluginTypeEnum';
 
 export class TinijService implements ITinijService {
 
@@ -12,11 +10,35 @@ export class TinijService implements ITinijService {
     private lastTrackedActivity: number = 0;
 
     constructor() {
-        this.tinijExecutor = new Tinij("test");
+        this.tinijExecutor = new Tinij();
     }
 
-    initService(): Promise<boolean> {
-        return this.tinijExecutor.initServices();
+
+
+    getActivityFile(): string {
+        let config = this.tinijExecutor.getConfig();
+        return config.GetActivityFileLocation();
+    }
+
+    
+    getConfigFile(): string {
+        let config = this.tinijExecutor.getConfig();
+        return config.GetConfigLocation();
+    }
+
+    async apiTokenExist(): Promise<boolean> {
+        return this.tinijExecutor.isApiKeyExist();
+    }
+    
+    async setApiToken(token: string): Promise<boolean> {
+        this.tinijExecutor.setApiKey(token);
+        return true;
+    }
+
+    async initService(): Promise<boolean> {
+        let initServiceResult = await this.tinijExecutor.initServices();
+        let tinijConfig = this.tinijExecutor.getConfig();
+        return initServiceResult;
     }
 
     public onIDEEvent(file: string, isWrite: boolean, project: string, lineNo: number | undefined): void {
