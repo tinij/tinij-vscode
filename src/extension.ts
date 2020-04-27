@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-import { COMMAND_API_KEY, COMMAND_DASHBOARD } from './commands';
+import { COMMAND_API_KEY, COMMAND_DASHBOARD, COMMAND_CLEAR_CACHE_DATA, COMMAND_RESET_DEFAULT, COMMAND_LOG_FILE } from './commands';
 import { IExtentionIDEService } from './services/IDEService/IExtentionIDEService';
 import { ITinijService } from './services/BaseService/ITinijService';
 import { TinijService } from './services/BaseService/TinijService';
@@ -32,6 +32,18 @@ export async function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
 		vscode.commands.registerCommand(COMMAND_DASHBOARD, function() {
 			tinijIDEExtension?.openWebsite();
+		}),
+	);
+
+	context.subscriptions.push(
+		vscode.commands.registerCommand(COMMAND_CLEAR_CACHE_DATA, function() {
+			tinijIDEExtension?.clearCacheData();
+		}),
+	);
+
+	context.subscriptions.push(
+		vscode.commands.registerCommand(COMMAND_RESET_DEFAULT, function() {
+			tinijIDEExtension?.resetToDefault();
 		}),
 	);
 

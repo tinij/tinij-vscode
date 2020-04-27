@@ -10,10 +10,8 @@ export class TinijService implements ITinijService {
     private lastTrackedActivity: number = 0;
 
     constructor() {
-        this.tinijExecutor = new Tinij();
+        this.tinijExecutor = new Tinij("");
     }
-
-
 
     getActivityFile(): string {
         let config = this.tinijExecutor.getConfig();
@@ -63,5 +61,13 @@ export class TinijService implements ITinijService {
     }
 
     public dispose(): void {
+    }
+
+    clearCache(): Promise<boolean> {
+        return this.tinijExecutor.clearRecordedLogs();
+    }
+
+    resetToDefault(): Promise<boolean> {
+        return this.tinijExecutor.resetSettingsToDefault();
     }
 }

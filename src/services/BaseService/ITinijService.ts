@@ -5,6 +5,9 @@ export interface ITinijService {
     setApiToken(token: string) : Promise<boolean>;
     apiTokenExist(): Promise<boolean>;
 
+    clearCache() : Promise<boolean>;
+    resetToDefault(): Promise<boolean>;
+
     getConfigFile(): string;
     getActivityFile(): string;
 

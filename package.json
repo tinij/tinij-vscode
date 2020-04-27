@@ -1,7 +1,7 @@
 {
-	"name": "tinij",
-	"displayName": "tinij",
-	"description": "Tinij - track your work activity",
+	"name": "tinij.vscode",
+	"displayName": "TiniJ extension for VS Code",
+	"description": "TiniJ - track your time and work activity",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.43.0"
@@ -18,23 +18,19 @@
 		"commands": [
 			{
 				"command": "tinij.apikey",
-				"title": "Tinij: Set Api Key"
-			},
-			{
-				"command": "tinij.status_bar_enabled",
-				"title": "Tinij: Status Bar Enabled"
+				"title": "Tinij: Set API Key"
 			},
 			{
 				"command": "tinij.dashboard",
 				"title": "Tinij: Open dashboard"
 			},
 			{
-				"command": "tinij.config_file",
-				"title": "Tinij: Open config file"
+				"command": "tinij.reset_to_default",
+				"title": "Tinij: Reset settings to default"
 			},
 			{
-				"command": "tinij.log_file",
-				"title": "Tinij: Open log file"
+				"command": "tinij.clear_cached_data",
+				"title": "Tinij: Clear cached data"
 			}
 		]
 	},

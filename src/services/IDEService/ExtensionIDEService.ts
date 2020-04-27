@@ -25,7 +25,6 @@ export class ExtensionIDEService implements IExtentionIDEService {
         let promptOptions = {
             prompt: 'Tinij Api Key',
             placeHolder: 'Enter your api key from https://app.tinij.com/account',
-            value: "xxxx-xxxx-xxxx-xxxx-xxxx",
             ignoreFocusOut: true,
           };
         vscode.window.showInputBox(promptOptions).then(val => {
@@ -57,6 +56,15 @@ export class ExtensionIDEService implements IExtentionIDEService {
           let uri = vscode.Uri.file(path);
           vscode.window.showTextDocument(uri);
         }
+    }
+
+
+    resetToDefault(): Promise<boolean> {
+        return this.tinijService.resetToDefault();
+    }
+
+    clearCacheData(): Promise<boolean> {
+        return this.tinijService.clearCache();
     }
 
 
