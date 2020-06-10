@@ -26,7 +26,7 @@ export class ExtensionIDEService implements IExtentionIDEService {
             prompt: 'Tinij Api Key',
             placeHolder: 'Enter your api key from https://app.tinij.com/account',
             ignoreFocusOut: true,
-          };
+        };
         vscode.window.showInputBox(promptOptions).then(val => {
             if (val !== null && val !== undefined) {
                 this.tinijService.setApiToken(val);
@@ -53,8 +53,8 @@ export class ExtensionIDEService implements IExtentionIDEService {
     openLogFile(): void {
         let path = this.tinijService.getActivityFile();
         if (path) {
-          let uri = vscode.Uri.file(path);
-          vscode.window.showTextDocument(uri);
+            let uri = vscode.Uri.file(path);
+            vscode.window.showTextDocument(uri);
         }
     }
 

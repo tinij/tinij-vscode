@@ -458,6 +458,11 @@ color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
+commander@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
+  integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
+
 component-emitter@^1.2.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
@@ -2135,14 +2140,15 @@ through@^2.3.6:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
-tinij-base@^0.1.17:
-  version "0.1.17"
-  resolved "https://registry.yarnpkg.com/tinij-base/-/tinij-base-0.1.17.tgz#897cbb5ae995becc33dcd3e0774d2c0e0943c141"
-  integrity sha512-uG6uw+UgiqvoTRy9MhO1a0XTJnOZ0NA6vtUdbhjFGHUjRMI1z9Itdhxr9ZtR/36o0fUUjctjU2fj2PUYNiEtZA==
+tinij-base@0.1.18:
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/tinij-base/-/tinij-base-0.1.18.tgz#98ac1be73155957b76056bfdbf4677cf370584c5"
+  integrity sha512-1J4AKo0ObXtgKsDOXdSR4t+r+J0peSTQopCBu4Z0O2w9zXlLUhl7aBJe2JWs2fsF1clIZSTB//j8r/0PDUHcPA==
   dependencies:
     async-lock "1.2.2"
     axios "^0.19.2"
     class-validator "^0.12.0-rc.0"
+    commander "^5.1.0"
     git-branch "^2.0.1"
     language-detect "^1.1.0"
 

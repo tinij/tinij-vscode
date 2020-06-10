@@ -18,7 +18,7 @@ export class TinijService implements ITinijService {
         return config.GetActivityFileLocation();
     }
 
-    
+
     getConfigFile(): string {
         let config = this.tinijExecutor.getConfig();
         return config.GetConfigLocation();
@@ -27,7 +27,7 @@ export class TinijService implements ITinijService {
     async apiTokenExist(): Promise<boolean> {
         return this.tinijExecutor.isApiKeyExist();
     }
-    
+
     setApiToken(token: string): Promise<boolean> {
         return this.tinijExecutor.setApiKey(token);
     }
@@ -35,6 +35,7 @@ export class TinijService implements ITinijService {
     async initService(): Promise<boolean> {
         let initServiceResult = await this.tinijExecutor.initServices();
         let tinijConfig = this.tinijExecutor.getConfig();
+        tinijConfig.SetUserAgent("tinij/vscode:1.0");
         return initServiceResult;
     }
 
